@@ -23,11 +23,14 @@ const CustomNavbar = () => {
             alt="Logo"
             style={{ width: '50px', height: '50px', marginRight: '10px' }}
           />
+          <Link to={'/'}>
           <img
             src={title}
+            
             alt="App Name"
             style={{ width: '200px', height: '50px', marginRight: '10px' }}
           />
+          </Link>
         </Navbar.Brand>
 
         {/* Toggle button */}
@@ -62,9 +65,8 @@ const CustomNavbar = () => {
           </Nav.Link>
 
           {/* Profile */}
-          <Nav.Link href="#profile" style={{ marginLeft: '50px' }}>
-            <FaUser /> Profile
-          </Nav.Link>
+          <Link to={'/login'} style={{ marginLeft: '50px', textDecoration:'none', color:'inherit' }}><FaUser /> Profile</Link>
+       
         </Navbar.Collapse>
       </Container>
     </Navbar>

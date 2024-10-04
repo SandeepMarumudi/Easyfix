@@ -6,15 +6,42 @@ import electrician from '../pictures/electrician.jpg';
 import painter from '../pictures/painter.jpg';
 import pest from '../pictures/pest control.jpg';
 import plumber from '../pictures/plumber.jpg';
-import massage from '../pictures/massage.jpg';
-import mehendi from '../pictures/mehendi.jpg';
-import driver from '../pictures/driver.jpg';
 import ac_cleaner from '../pictures/ac cleaner.jpg';
 import commode from '../pictures/commode.jpg';
 import fan from '../pictures/fan.jpg';
 import washingmachine from '../pictures/washingmachine.jpg';
 import { CiStar } from 'react-icons/ci';
 import { GoPeople } from 'react-icons/go';
+import HorizontalCarousel from '../components/carousal';
+import StyledHeading from '../components/heading';
+import { Link } from 'react-router-dom';
+
+// Inline styles for the image highlight on hover
+const serviceImageStyle = {
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+  borderRadius: '10px',
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+};
+
+const hoverEffectStyle = {
+  transform: 'scale(1.05)',
+  boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
+};
+
+const rowSpanStyle = {
+  gridRow: 'span 2',
+  height: '300px',
+};
+
+const containerStyle = {
+  padding: '20px',
+  border: '1px solid #ddd',
+  borderRadius: '10px',
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+};
 
 const marqueeStyle = {
   width: '100%',
@@ -50,35 +77,16 @@ const addMarqueeKeyframes = () => {
 
 const Home = () => {
   addMarqueeKeyframes();
+
   const imageData = [
-    { img: ac, name: 'AC & Appliance Repair' },
-    { img: cleaner, name: 'Cleaning' },
-    { img: electrician, name: 'Electrician' },
-    { img: painter, name: 'Painting & Waterproofing' },
-    { img: plumber, name: 'Plumber' },
-    { img: carpenter, name: 'Carpenter' },
-    { img: pest, name: 'Pest Control' },
+    { img: ac, name: 'AC & Appliance Repair',path:'/ac' },
+    { img: cleaner, name: 'Cleaning',path:'/cleaning' },
+    { img: electrician, name: 'Electrician',path:'/electrician' },
+    { img: painter, name: 'Painting & Waterproofing',path:'/painting' },
+    { img: plumber, name: 'Plumber',path:'/plumber' },
+    { img: carpenter, name: 'Carpenter',path:'/carpenter' },
+    { img: pest, name: 'Pest Control',path:'/pest' },
   ];
-
-  const serviceImageStyle = {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    borderRadius: '10px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-  };
-
-  const rowSpanStyle = {
-    gridRow: 'span 2',
-    height: '300px',
-  };
-
-  const containerStyle = {
-    padding: '20px',
-    border: '1px solid #ddd',
-    borderRadius: '10px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-  };
 
   return (
     <>
@@ -88,6 +96,7 @@ const Home = () => {
           Electricians, plumbers, cleaners, and more!
         </p>
       </div>
+      
       <Container className="my-5">
         <Row>
           {/* First container for the first set of images */}
@@ -98,6 +107,7 @@ const Home = () => {
                 {imageData.map((service, index) => (
                   <Col key={index} xs={6} sm={6} md={4} className="text-center">
                     <div className="service-box">
+                      <Link to={service.path}>
                       <img
                         src={service.img}
                         alt={service.name}
@@ -106,8 +116,20 @@ const Home = () => {
                           width: '150px',
                           height: '120px',
                           borderRadius: '10px',
+                          transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                        }}
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.transform = 'scale(1.05)';
+                          e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.transform = 'scale(1)';
+                          e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
                         }}
                       />
+                      </Link>
+                      
+                      
                       <p>{service.name}</p>
                     </div>
                   </Col>
@@ -128,6 +150,14 @@ const Home = () => {
                         style={serviceImageStyle}
                         src={cleaner}
                         alt="Image 1"
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.transform = 'scale(1.05)';
+                          e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.transform = 'scale(1)';
+                          e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                        }}
                       />
                     </Col>
                     <Col xs={6} sm={8} md={9}>
@@ -135,6 +165,14 @@ const Home = () => {
                         style={serviceImageStyle}
                         src={ac_cleaner}
                         alt="Image 2"
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.transform = 'scale(1.05)';
+                          e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.transform = 'scale(1)';
+                          e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                        }}
                       />
                     </Col>
                   </Row>
@@ -145,6 +183,14 @@ const Home = () => {
                         style={{ ...serviceImageStyle, height: '100%' }}
                         src={commode}
                         alt="Image 3"
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.transform = 'scale(1.05)';
+                          e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.transform = 'scale(1)';
+                          e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                        }}
                       />
                     </Col>
                     <Col xs={6} sm={4} md={6}>
@@ -152,6 +198,14 @@ const Home = () => {
                         style={serviceImageStyle}
                         src={washingmachine}
                         alt="Image 4"
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.transform = 'scale(1.05)';
+                          e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.transform = 'scale(1)';
+                          e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                        }}
                       />
                     </Col>
                     <Col xs={6} sm={4} md={3}>
@@ -159,6 +213,14 @@ const Home = () => {
                         style={serviceImageStyle}
                         src={fan}
                         alt="Image 5"
+                        onMouseOver={(e) => {
+                          e.currentTarget.style.transform = 'scale(1.05)';
+                          e.currentTarget.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+                        }}
+                        onMouseOut={(e) => {
+                          e.currentTarget.style.transform = 'scale(1)';
+                          e.currentTarget.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                        }}
                       />
                     </Col>
                   </Row>
@@ -168,6 +230,7 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
+
       <div style={{ display: 'flex', gap: '25px' }}>
         <div style={{ display: 'flex', gap: '10px', marginLeft: '20px' }}>
           <CiStar style={{ height: '60px', width: '60px' }} />
@@ -184,6 +247,10 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* carousel */}
+      <StyledHeading text={'Most booked services'} />
+      <HorizontalCarousel />
     </>
   );
 };

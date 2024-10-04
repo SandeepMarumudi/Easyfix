@@ -1,0 +1,49 @@
+{
+  "bookings": [
+    {
+      "userDetails": {
+        "name": "John Doe",
+        "phone": "+1234567890",
+        "email": "john.doe@example.com",
+        "address": "123 Main St, City, Zip",
+        "location": {
+          "latitude": 40.7128,
+          "longitude": -74.006
+        }
+      },
+      "bookingDetails": {
+        "date": "2024-10-04",
+        "time": "14:00",
+        "status": "Pending",
+        "payment": {
+          "amount": 100,
+          "status": "Paid"
+        }
+      },
+      "id": "1a01"
+    }
+  ],
+  "users": [
+    {
+      "id": "48b2",
+      "name": "MARUMUDI SANDEEP",
+      "email": "marumudisandeep@gmail.com",
+      "phone": "07997 410109",
+      "password": "sa"
+    },
+    {
+      "id": "f170",
+      "name": "karthik",
+      "email": "sandysandy14322@gmail.com",
+      "phone": "07997 41010",
+      "password": "san"
+    },
+    {
+      "id": "1728036041624",
+      "name": "candy",
+      "email": "candy@gmail.com",
+      "phone": "12345",
+      "password": "12345"
+    }
+  ]
+}
