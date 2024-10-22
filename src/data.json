@@ -1,48 +1,110 @@
 {
-  "bookings": [
-    {
-      "userDetails": {
-        "name": "John Doe",
-        "phone": "+1234567890",
-        "email": "john.doe@example.com",
-        "address": "123 Main St, City, Zip",
-        "location": {
-          "latitude": 40.7128,
-          "longitude": -74.006
-        }
-      },
-      "bookingDetails": {
-        "date": "2024-10-04",
-        "time": "14:00",
-        "status": "Pending",
-        "payment": {
-          "amount": 100,
-          "status": "Paid"
-        }
-      },
-      "id": "1a01"
-    }
-  ],
   "users": [
     {
-      "id": "48b2",
+      "id": "101",
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "phone": "1234567890",
+      "password": "securePassword",
+      "cart": [
+        {
+          "serviceId": 1,
+          "name": "Electrician",
+          "price": 50,
+          "quantity": 1,
+          "total": 50
+        }
+      ],
+      "bookedServices": [],
+      "paymentHistory": [
+        {
+          "bookingId": 501,
+          "totalAmount": 130,
+          "paymentMethod": "Credit Card",
+          "paymentDate": "2024-09-10"
+        }
+      ]
+    },
+    {
+      "id": "102",
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "phone": "0987654321",
+      "password": "anotherPassword",
+      "cart": [],
+      "paymentHistory": [
+        {
+          "bookingId": 502,
+          "totalAmount": 80,
+          "paymentMethod": "PayPal",
+          "paymentDate": "2024-08-25"
+        }
+      ]
+    },
+    {
+      "id": "1728191928663",
       "name": "MARUMUDI SANDEEP",
       "email": "marumudisandeep@gmail.com",
-      "phone": "07997 410109",
-      "password": "sa"
+      "phone": "7997 410109",
+      "password": "sandy2242",
+      "cart": [
+        {
+          "id": 1728569056479,
+          "title": "Lights",
+          "price": 400,
+          "url": "/src/pictures/elctrician/bulb1.jpg"
+        }
+      ]
     },
     {
-      "id": "f170",
-      "name": "karthik",
+      "id": "1728193208075",
+      "name": "sandeep",
       "email": "sandysandy14322@gmail.com",
-      "phone": "07997 41010",
-      "password": "san"
+      "phone": "7997 410109",
+      "password": "candy2242",
+      "cart": [
+        {
+          "id": 1728666237831,
+          "title": "Mcb",
+          "price": 200,
+          "url": "/src/pictures/elctrician/mcb.jpg"
+        },
+        {
+          "id": 1728667466450,
+          "title": "Mcb",
+          "price": 200,
+          "url": "/src/pictures/elctrician/mcb.jpg"
+        },
+        {
+          "id": 1728667467262,
+          "title": "Fan",
+          "price": 300,
+          "url": "/src/pictures/elctrician/fan.jpg"
+        },
+        {
+          "id": 1728667468012,
+          "title": "Lights",
+          "price": 400,
+          "url": "/src/pictures/elctrician/bulb1.jpg"
+        }
+      ],
+      "booked": [
+        
+      ]
     },
     {
-      "id": "1728036041624",
-      "name": "candy",
-      "email": "candy@gmail.com",
-      "phone": "12345",
+      "id": "1728239866002",
+      "name": "sandy",
+      "email": "sandy@gmail.com",
+      "phone": "123456",
+      "password": "123",
+      "cart": []
+    },
+    {
+      "id": "1728310978022",
+      "name": "arjun",
+      "email": "arjun@gmail.com",
+      "phone": "1234567890",
       "password": "12345"
     }
   ]

@@ -12,6 +12,8 @@ const CustomNavbar = () => {
     setSearchQuery(e.target.value);
     console.log('Search Query:', searchQuery);
   };
+  const username=localStorage.getItem('username')
+  console.log(username)
 
   return (
     <Navbar expand="lg" style={{ backgroundColor: 'rgb(246, 246, 246)' }} className="shadow-sm">
@@ -60,12 +62,19 @@ const CustomNavbar = () => {
           </Nav.Link>
 
           {/* Cart */}
-          <Nav.Link href="#cart" style={{ marginLeft: '50px' }}>
+          <Link to={'/cart'} style={{ marginLeft: '50px', color:'inherit', textDecoration:'none' }}>
             <FaShoppingCart /> Cart
-          </Nav.Link>
+          </Link>
+
+          
+          {/* Booked */}
+          <Link to={'/booked'} style={{ marginLeft: '50px', color:'inherit', textDecoration:'none' }}>
+            <FaShoppingCart /> Booked
+          </Link>
 
           {/* Profile */}
-          <Link to={'/login'} style={{ marginLeft: '50px', textDecoration:'none', color:'inherit' }}><FaUser /> Profile</Link>
+          
+          <Link to={'/login'} style={{ marginLeft: '50px', textDecoration:'none', color:'inherit' }}><FaUser />{username}</Link>
        
         </Navbar.Collapse>
       </Container>

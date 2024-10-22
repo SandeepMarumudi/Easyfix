@@ -87,6 +87,7 @@ const Home = () => {
     { img: carpenter, name: 'Carpenter',path:'/carpenter' },
     { img: pest, name: 'Pest Control',path:'/pest' },
   ];
+console.log('hello');
 
   return (
     <>

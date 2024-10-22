@@ -50,7 +50,13 @@ const UserAuth = () => {
       } else {
         // Email exists, now check if the password matches
         const user = response.data[0]; // Assume there's only one user per email
+        
         if (user.password === loginData.password) {
+          localStorage.clear()
+          localStorage.setItem('userId',user.id)
+          localStorage.setItem('username', user.name);
+          localStorage.setItem('useremail', user.email);
+
           alert('Login successful!');
           // Redirect to the app (you can manage this with routing)
         } else {
