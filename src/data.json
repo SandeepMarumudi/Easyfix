@@ -86,11 +86,21 @@
           "title": "Lights",
           "price": 400,
           "url": "/src/pictures/elctrician/bulb1.jpg"
+        },
+        {
+          "id": 1729620873866,
+          "title": "Fan",
+          "price": 300,
+          "url": "/src/pictures/elctrician/fan.jpg"
+        },
+        {
+          "id": 1729620872419,
+          "title": "Lights",
+          "price": 400,
+          "url": "/src/pictures/elctrician/bulb1.jpg"
         }
       ],
-      "booked": [
-        
-      ]
+      "booked": []
     },
     {
       "id": "1728239866002",
